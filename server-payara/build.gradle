@@ -1,0 +1,16 @@
+apply plugin: 'eclipse'
+apply plugin: 'war'
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+dependencies {
+	providedCompile group: 'org.eclipse.microprofile', name: 'microprofile', version: '3.2'
+	//compile group: 'javax', name: 'javaee-api', version: '8.0.1'
+	
+    //BD
+	compile group: 'commons-dbcp', name: 'commons-dbcp', version: '1.2.2'
+    compile group: 'org.postgresql', name: 'postgresql', version: '42.2.8'
+}

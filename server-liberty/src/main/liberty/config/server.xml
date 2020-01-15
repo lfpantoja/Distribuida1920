@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<server description="server-liberty">
+
+  <featureManager>
+      <feature>microProfile-3.2</feature>
+  </featureManager>
+
+  <httpEndpoint httpPort="9080" httpsPort="9443" id="defaultHttpEndpoint" host="*" />
+
+</server>

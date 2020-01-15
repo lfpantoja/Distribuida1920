@@ -1,0 +1,25 @@
+apply plugin: 'eclipse'
+apply plugin: 'war'
+apply plugin: 'liberty'
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'net.wasdev.wlp.gradle.plugins:liberty-gradle-plugin:2.6.3'
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {	
+    providedCompile group: 'org.eclipse.microprofile', name: 'microprofile', version: '3.2'
+    //compile group: 'javax', name: 'javaee-api', version: '8.0.1'
+	libertyRuntime group: 'io.openliberty', name: 'openliberty-runtime', version: '19.0.0.12'
+	//BD
+	compile group: 'commons-dbcp', name: 'commons-dbcp', version: '1.2.2'
+    compile group: 'org.postgresql', name: 'postgresql', version: '42.2.8'
+}

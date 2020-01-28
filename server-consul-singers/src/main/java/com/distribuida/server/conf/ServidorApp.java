@@ -80,6 +80,8 @@ public class ServidorApp extends Application{
 		check.setDeregisterCriticalServiceAfter("20s");
 		
 		
+		
+		
 		s.setCheck(check);
 		
 		client.agentServiceRegister(s);

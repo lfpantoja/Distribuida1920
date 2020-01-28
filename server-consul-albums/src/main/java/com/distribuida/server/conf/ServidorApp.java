@@ -66,7 +66,7 @@ public class ServidorApp extends Application{
 	//observes listener para eventos
 	//para agregar al servidor
 	public void init(@Observes @Initialized(ApplicationScoped.class) Object init) {
-		System.out.println("Iniciando");
+		System.out.println("****************************Iniciando");
 		
 		ConsulClient client = new ConsulClient(consulHost,consulPort);
 		//ConsulClient client = new ConsulClient();

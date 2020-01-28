@@ -34,6 +34,9 @@ task copyLibs(type:Copy){
 task ejecutableA(type:FatCapsule){
 	group = 'build'
 	applicationClass 'io.helidon.microprofile.server.Main'
+	capsuleManifest{
+		applicationName='rest-album'
+	}
 }
 
 //https://github.com/microprofile-extensions/config-ext/blob/master/configsource-consul/README.md

@@ -20,19 +20,19 @@ public class DbProducer{
 	private Config config;
     
     @Inject
-	@ConfigProperty(name = "driver")
+	@ConfigProperty(name = "driver",defaultValue="org.postgresql.Driver")
 	private String driver;
     
     @Inject
-	@ConfigProperty(name = "url")
+	@ConfigProperty(name = "url",defaultValue="jdbc:postgresql://localhost:5432/deber04")
 	private String url;
     
     @Inject
-	@ConfigProperty(name = "user")
+	@ConfigProperty(name = "user",defaultValue="postgres")
 	private String user;
     
     @Inject
-	@ConfigProperty(name = "pass")
+	@ConfigProperty(name = "pass",defaultValue="root")
 	private String pass;
     
     @PostConstruct

@@ -1,0 +1,35 @@
+plugins {
+    // Apply the java-library plugin to add support for Java Library
+    id 'java-library'
+    id "it.gianluz.capsule" version "1.0.3"
+}
+
+repositories {
+    // Use jcenter for resolving your dependencies.
+    // You can declare any Maven/Ivy/file repository here.
+    jcenter()
+}
+
+dependencies {
+    compile group: 'io.helidon', name: 'helidon-bom', version: '1.4.0', ext: 'pom'
+	compile group: 'io.helidon.microprofile.bundles', name: 'helidon-microprofile', version: '1.4.0'
+	
+	compile group: 'org.glassfish.jersey.media', name: 'jersey-media-json-jackson', version: '2.30'
+	
+	compile group: 'com.ecwid.consul', name: 'consul-api', version: '1.4.4'
+    
+    compile group: 'com.netflix.ribbon', name: 'ribbon', version: '2.7.17'
+}
+
+task copyLibs(type:Copy){
+	from configurations.runtime
+	into 'build/libs/libs'
+}
+
+task ejecutableA(type:FatCapsule){
+	group = 'build'
+	applicationClass 'io.helidon.microprofile.server.Main'
+	capsuleManifest{
+		applicationName='rest-gateway'
+	}
+}

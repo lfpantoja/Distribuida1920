@@ -1,0 +1,54 @@
+buildscript{
+	repositories{
+		mavenLocal()
+		mavenCentral()
+	}
+	
+	dependencies {
+		//classpath "org.wildfly.swarm:wildfly-swarm-plugin:2018.5.0"
+		classpath group: 'io.thorntail', name: 'thorntail-gradle-plugin', version: '2.6.0.Final'
+	}
+}
+
+apply plugin: 'thorntail'
+apply plugin: 'war'
+
+//thorntail {
+    //properties {
+      //  swarm.http.host = 'localhost'
+    //    swarm.http.port = 8181
+  //  }
+//}
+
+repositories {
+    jcenter()
+    //mavenLocal()
+    //mavenCentral()
+    //maven {
+      //  url "https://maven.repository.redhat.com/nexus/content/repositories/thirdparty-releases/"
+    //}
+    //maven {
+      //  url "https://repo.gradle.org/gradle/libs-releases-local"
+    //}
+}
+
+dependencies {
+    implementation enforcedPlatform("io.thorntail:bom:2.6.0.Final")
+    implementation "io.thorntail:cdi"
+    implementation "io.thorntail:jaxrs"
+    //implementation "io.thorntail:jpa"
+    //implementation "io.thorntail:microprofile"
+    implementation "commons-io:commons-io:2.4"
+    implementation "org.postgresql:postgresql:42.2.2" 
+	//compile group: 'io.thorntail', name: 'jaxrs', version: '2.6.0.Final'
+	//compile group: 'io.thorntail', name: 'cdi', version: '2.6.0.Final'
+	//compile group: 'io.thorntail', name: 'undertow', version: '2.6.0.Final'
+	//compile group: 'io.thorntail', name: 'jpa', version: '2.6.0.Final' //este esta comentado pa ver si vale con jpa normal
+	//compile group: 'io.thorntail', name: 'datasources', version: '2.6.0.Final'
+	//compile group: 'org.hibernate.javax.persistence', name: 'hibernate-jpa-2.1-api', version: '1.0.2.Final'
+	//providedCompile group: 'javax.persistence', name: 'persistence-api', version:'1.0.2'
+    //providedCompile group: 'javax.transaction', name: 'javax.transaction-api', version:'1.2'
+	
+	//compile group: 'org.eclipse.persistence', name: 'eclipselink', version: '2.7.6'
+    //compile group: 'org.postgresql', name: 'postgresql', version: '42.2.8'
+}

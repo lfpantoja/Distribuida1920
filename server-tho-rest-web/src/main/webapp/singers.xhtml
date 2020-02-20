@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:body>
+<h:form>	
+		<h:form prependId="false">
+        <table >
+			<tr>
+				<th width="80">ID</th>
+				<th width="120">F Name</th>
+				<th width="120">L Name</th>
+				<th width="120">B Date</th>
+			</tr>
+			<ui:repeat value="${singerAction.getSingers()}" var="a">
+				<tr>
+					<td>${a.id}</td>
+					<td>${a.firstName}</td>
+					<td>${a.lastName}</td>
+					<td>${a.birthDate}</td>
+					<td><h:commandButton action="#{singerAction.detalle(a)}" value="Detalle Singer"></h:commandButton> </td>
+				</tr>
+			</ui:repeat>
+		</table>
+    </h:form>
+</h:form>
+<a href="${pageContext.request.contextPath}/server-tho-rest-web/index.xhtml">Cancel</a>
+</h:body>
+
+
+</html>

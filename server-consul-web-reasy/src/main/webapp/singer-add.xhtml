@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:body>
+<h1>Add a Singer</h1>
+	<h:form>
+		<table>
+			<tr>
+				<td><label>Id</label></td>
+				<td><h:inputText id="id" value="#{singer.id}"></h:inputText>
+				</td>
+			</tr>
+			<tr>
+				<td><label>F Name</label></td>
+				<td><h:inputText id="firstName" value="#{singer.firstName}"></h:inputText>
+				</td>
+			</tr>
+			<tr>
+				<td><label>L Name</label></td>
+				<td><h:inputText id="lastName" value="#{singer.lastName}"></h:inputText>
+				</td>
+			</tr>
+			<tr>
+				<td><label>Birth Date</label></td>
+				<td>
+				<h:inputText id="birthDate" value="#{singer.birthDate}">
+					<f:convertDateTime pattern="dd-MM-yyyy HH:mm" timeZone="GMT-5" />
+				</h:inputText>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><h:commandButton
+						action="#{singerAction.addSinger(singer)}" value="Add Singer"></h:commandButton>
+				</td>
+			</tr>
+
+		</table>
+	<a href="${pageContext.request.contextPath}/server-consul-web-reasy">Cancel</a>
+	</h:form>
+</h:body>
+</html>

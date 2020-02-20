@@ -1,0 +1,52 @@
+buildscript{
+	repositories{
+		mavenLocal()
+		mavenCentral()
+	}
+	
+	dependencies {
+		//classpath "org.wildfly.swarm:wildfly-swarm-plugin:2018.5.0"
+		classpath group: 'io.thorntail', name: 'thorntail-gradle-plugin', version: '2.6.0.Final'
+	}
+}
+apply plugin: 'thorntail'
+apply plugin: 'war'
+apply plugin: 'java'
+//apply plugin: 'java-library'
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+dependencies {
+	//implementation enforcedPlatform("io.thorntail:bom-all:2.6.0.Final")
+	implementation enforcedPlatform("io.thorntail:bom:2.6.0.Final")
+	implementation "io.thorntail:jaxrs"
+	implementation "io.thorntail:cdi"
+	//implementation "io.thorntail:datasources"
+    
+    //JAX-RS
+    //compile group: 'org.jboss.resteasy', name: 'resteasy-jaxrs', version: '3.9.0.Final'
+	//compile group: 'org.jboss.resteasy', name: 'resteasy-servlet-initializer', version: '3.9.0.Final'
+	//compile group: 'org.jboss.resteasy', name: 'resteasy-jackson2-provider', version: '3.9.0.Final'
+	//compile group: 'org.jboss.resteasy', name: 'resteasy-jaxb-provider', version: '3.9.0.Final'
+	//compile group: 'org.jboss.resteasy', name: 'resteasy-cdi', version: '3.9.0.Final' //CDI y rest
+	
+	//CDI
+	//compile group: 'org.jboss.weld.servlet', name: 'weld-servlet-core', version: '3.1.2.Final'
+	
+	//JPA Y BD
+	//compile group: 'org.hibernate', name: 'hibernate-core', version: '5.4.8.Final'
+	//compile group: 'org.hibernate', name: 'hibernate-entity-manager', version: '5.4.8.Final'
+	compile group: 'org.apache.openjpa', name: 'openjpa-persistence-jdbc', version: '3.1.0'
+    compile group: 'org.apache.openjpa', name: 'openjpa', version: '3.1.0'
+	////compile group: 'org.hibernate.javax.persistence', name: 'hibernate-jpa-2.1-api', version: '1.0.2.Final'
+	compile group: 'org.postgresql', name: 'postgresql', version: '42.2.8'
+	
+	//lombok
+	providedCompile 'org.projectlombok:lombok:1.18.10'
+	//compileOnly 'org.projectlombok:lombok:1.18.10'
+	//annotationProcessor 'org.projectlombok:lombok:1.18.10'
+	
+}

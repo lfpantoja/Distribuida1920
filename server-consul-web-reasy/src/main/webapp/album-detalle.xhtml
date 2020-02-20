@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+ <h:body>
+ 	<div class="container">
+		<h:form prependId="false">
+			<h2>Detalle Album</h2>
+			<hr/>
+			
+			<h:panelGrid width="98%" columns="2" >
+				<h:outputText value="ID:"/>
+				<h:outputText value="${albumAction.albumSeleccionado.id}"/>
+				
+				<h:outputText value="Singer ID:"/>
+				<h:outputText value="${albumAction.albumSeleccionado.singerId}"/>
+				
+				<h:outputText value="Título"/>
+				<h:outputText value="${albumAction.albumSeleccionado.title}"/>
+
+				<h:outputText value="R date:"/>
+				<h:outputText value="${albumAction.albumSeleccionado.releaseDate}"/>
+			</h:panelGrid>			
+			
+			<h:commandButton value="Regresar" action="albums" />	
+		
+		</h:form>
+	</div>
+ </h:body>
+
+</html>

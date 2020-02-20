@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:body>
+<h:form>	
+		<h:form prependId="false">
+        <table >
+			<tr>
+				<th width="80">ID</th>
+				<th width="120">Singer ID</th>
+				<th width="120">Title</th>
+				<th width="120">R date</th>
+			</tr>
+			<ui:repeat value="${albumAction.getAlbums()}" var="a">
+				<tr>
+					<td>${a.id}</td>
+					<td>${a.singerId}</td>
+					<td>${a.title}</td>
+					<td>${a.releaseDate}</td>
+					<td><h:commandButton action="#{albumAction.detalle(a)}" value="Detalle Album"></h:commandButton> </td>
+					<td><h:commandButton action="#{albumAction.deleteAlbum(a.id)}" value="Delete Album"></h:commandButton> </td>
+				</tr>
+			</ui:repeat>
+		</table>
+    </h:form>
+</h:form>
+<a href="${pageContext.request.contextPath}/server-consul-web-reasy/index.xhtml">Cancel</a>
+</h:body>
+
+
+</html>

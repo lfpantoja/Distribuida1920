@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+	
+<h:body>
+<h1>Add a Album</h1>
+	<h:form>
+		<table>
+			<tr>
+				<td><label>Id</label></td>
+				<td><h:inputText id="id" value="#{album.id}"></h:inputText>
+				</td>
+			</tr>
+			<tr>
+				<td><label>Singer Id</label></td>
+				<td><h:inputText id="singerId" value="#{album.singerId}"></h:inputText>
+				</td>
+			</tr>
+			<tr>
+				<td><label>Title</label></td>
+				<td><h:inputText id="title" value="#{album.title}"></h:inputText>
+				</td>
+			</tr>
+			<tr>
+				<td><label>Release Date</label></td>
+				<td>
+				<h:inputText id="releaseDate" value="#{album.releaseDate}">
+					<f:convertDateTime pattern="dd-MM-yyyy HH:mm" timeZone="GMT-5" />
+				</h:inputText>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><h:commandButton
+						action="#{albumAction.addAlbum(album)}" value="Add Album"></h:commandButton>
+				</td>
+			</tr>
+
+		</table>
+<a href="${pageContext.request.contextPath}/server-consul-weblb">Cancel</a>
+	</h:form>
+</h:body>
+</html>

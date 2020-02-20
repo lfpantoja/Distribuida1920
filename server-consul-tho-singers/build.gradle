@@ -1,0 +1,29 @@
+buildscript{
+	repositories{
+		mavenCentral()
+	}
+	
+	dependencies {
+		classpath group: 'io.thorntail', name: 'thorntail-gradle-plugin', version: '2.6.0.Final'
+	}
+	
+}
+	
+apply plugin: 'thorntail'
+apply plugin: 'war'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    implementation enforcedPlatform("io.thorntail:bom:2.6.0.Final") 
+	implementation "io.thorntail:jaxrs"
+	
+	compile group: 'com.ecwid.consul', name: 'consul-api', version: '1.4.4'
+	compile group: 'io.helidon.microprofile.bundles', name: 'helidon-microprofile', version: '1.4.0'
+	
+	compile group: 'commons-dbcp', name: 'commons-dbcp', version: '1.2.2'
+    compile group: 'org.postgresql', name: 'postgresql', version: '42.2.8'
+    compile group: 'org.glassfish.jersey.media', name: 'jersey-media-json-jackson', version: '2.30'
+}

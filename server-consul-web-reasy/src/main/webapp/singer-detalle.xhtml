@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+ <h:body>
+ 	<div class="container">
+		<h:form prependId="false">
+			<h2>Detalle Singer</h2>
+			<hr/>
+			
+			<h:panelGrid width="98%" columns="2" >
+				<h:outputText value="ID:"/>
+				<h:outputText value="${singerAction.singerSeleccionado.id}"/>
+				
+				<h:outputText value="F Name:"/>
+				<h:outputText value="${singerAction.singerSeleccionado.firstName}"/>
+
+				<h:outputText value="L Name:"/>
+				<h:outputText value="${singerAction.singerSeleccionado.lastName}"/>
+
+				<h:outputText value="B Date:"/>
+				<h:outputText value="${singerAction.singerSeleccionado.birthDate}"/>
+			</h:panelGrid>			
+			
+			<h:commandButton value="Regresar" action="singers"/>	
+		
+		</h:form>
+	</div>
+ </h:body>
+
+</html>

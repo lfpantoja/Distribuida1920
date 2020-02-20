@@ -1,0 +1,33 @@
+buildscript{
+	repositories { 
+    	mavenCentral() 
+    }
+	dependencies {
+   		classpath group: 'io.thorntail', name: 'thorntail-gradle-plugin', version: '2.6.0.Final'
+	}
+}
+
+apply plugin: 'java-library'
+apply plugin: 'thorntail'
+apply plugin: 'war'
+
+repositories { 
+   jcenter()
+   mavenCentral()
+   mavenLocal()
+} 
+
+dependencies {
+   implementation enforcedPlatform ("io.thorntail:bom:2.6.0.Final")
+   implementation "io.thorntail:jaxrs" 
+   implementation "io.thorntail:cdi" 
+   implementation "io.thorntail:microprofile-config" 
+   implementation "io.thorntail:hibernate"
+   implementation "io.thorntail:topology-consul"   
+   implementation "org.postgresql:postgresql:42.2.9"
+   
+   compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.30'
+   compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.22.jbossorg-1'
+   
+   compile group: 'com.ecwid.consul', name: 'consul-api', version: '1.4.4'
+} 
